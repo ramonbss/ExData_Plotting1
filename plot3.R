@@ -2,6 +2,10 @@
 script.dir <- dirname(sys.frame(1)$ofile)
 setwd(script.dir)
 
+# Set timezone to English format
+Sys.setenv(TZ = "UTC")
+Sys.setlocale("LC_TIME", "C")
+
 # Unzip file if necessary
 if(!file.exists("household_power_consumption.txt")){
     print("Unziping file...")
